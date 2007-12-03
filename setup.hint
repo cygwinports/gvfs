@@ -1,0 +1,4 @@
+category: Gnome
+requires: cygwin gio glib2 libdbus1_3 libintl8
+sdesc: "Next-generation GNOME VFS"
+ldesc: "Next-generation GNOME VFS"

@@ -1,0 +1,81 @@
+gvfs
+------------------------------------------
+Next-generation replacement for GNOME VFS
+
+Runtime requirements:
+  cygwin-1.5.24-2
+  gio-0.1.2-1
+  glib2-2.14.4-1
+  libdbus1_3-1.0.2-1
+  libintl8-0.15-1
+
+Build requirements:
+(besides corresponding -devel packages)
+  cygwin-1.5.24-2
+  autoconf2.5-2.61-1
+  automake1.10-1.10-1
+  binutils-20060817-1
+  cygport-0.3.7-1
+  gawk-3.1.5-4
+  gcc-core-3.4.4-3
+  gtk-doc-1.9-1
+  libtool1.5-1.5.23a-2
+  make-3.81-1
+  pkg-config-0.21-1
+  sed-4.1.5-2
+
+Canonical website:
+  http://www.gnome.org/
+
+Canonical download:
+  ftp://ftp.gnome.org/pub/gnome/sources/gvfs/
+
+-------------------------------------------
+
+Build instructions:
+  unpack gvfs-0.0.2-X-src.tar.bz2
+    if you use setup to install this src package, it will be
+	 unpacked under /usr/src automatically
+  cd /usr/src
+  cygport ./gvfs-0.0.2-X.cygport all
+
+This will create:
+  /usr/src/gvfs-0.0.2-X-src.tar.bz2
+  /usr/src/gvfs-0.0.2-X.tar.bz2
+
+-------------------------------------------
+
+Files included in the binary package:
+
+  /etc/gvfs/mounts/ftp.mount
+  /etc/gvfs/mounts/sftp.mount
+  /etc/gvfs/mounts/trash.mount
+  /usr/bin/cyggvfscommon-0.dll
+  /usr/include/gvfs-client/gvfs/gvfsurimapper.h
+  /usr/include/gvfs-client/gvfs/gvfsuriutils.h
+  /usr/lib/gio/modules/cyggvfsdbus.dll
+  /usr/lib/gio/modules/libgvfsdbus.la
+  /usr/lib/libgvfscommon.dll.a
+  /usr/lib/libgvfscommon.la
+  /usr/sbin/gvfsd-ftp.exe
+  /usr/sbin/gvfsd-sftp.exe
+  /usr/sbin/gvfsd-trash.exe
+  /usr/sbin/gvfsd.exe
+  /usr/share/dbus-1/services/gvfs-daemon.service
+  /usr/share/doc/Cygwin/gvfs-0.0.2.README
+  /usr/share/doc/gvfs-0.0.2/AUTHORS
+  /usr/share/doc/gvfs-0.0.2/COPYING
+  /usr/share/doc/gvfs-0.0.2/ChangeLog
+  /usr/share/doc/gvfs-0.0.2/NEWS
+  /usr/share/doc/gvfs-0.0.2/TODO
+
+------------------
+
+Port Notes:
+
+----- version 0.0.2-1 -----
+Initial release for Cygwin.
+
+
+Cygwin port maintained by:
+http://cygwinports.dotsrc.org/
