@@ -1,13 +1,20 @@
 gvfs
 ------------------------------------------
-Next-generation replacement for GNOME VFS
+gvfs is a userspace virtual filesystem designed to work with the i/o
+abstractions of gio (a library availible in glib >= 2.15.1). It
+installs several modules that are automatically used by applications
+using the APIs of libgio. There is also fuse support that allows
+applications not using gio to access the gvfs filesystems.
 
 Runtime requirements:
-  cygwin-1.5.24-2
-  gio-0.1.2-1
-  glib2-2.14.4-1
+  cygwin-1.5.25-11
+  GConf2-2.22.0-1
+  glib2-2.16.3-1
+  gnome-keyring-2.20.3-1
+  libarchive2-2.4.17-1
   libdbus1_3-1.0.2-1
   libintl8-0.15-1
+  libxml2-2.6.32-1
 
 Build requirements:
 (besides corresponding -devel packages)
@@ -33,47 +40,128 @@ Canonical download:
 -------------------------------------------
 
 Build instructions:
-  unpack gvfs-0.0.2-X-src.tar.bz2
+  unpack gvfs-0.2.4-X-src.tar.bz2
     if you use setup to install this src package, it will be
 	 unpacked under /usr/src automatically
   cd /usr/src
-  cygport ./gvfs-0.0.2-X.cygport all
+  cygport ./gvfs-0.2.4-X.cygport all
 
 This will create:
-  /usr/src/gvfs-0.0.2-X-src.tar.bz2
-  /usr/src/gvfs-0.0.2-X.tar.bz2
+  /usr/src/gvfs-0.2.4-X-src.tar.bz2
+  /usr/src/gvfs-0.2.4-X.tar.bz2
 
 -------------------------------------------
 
 Files included in the binary package:
 
-  /etc/gvfs/mounts/ftp.mount
-  /etc/gvfs/mounts/sftp.mount
-  /etc/gvfs/mounts/trash.mount
+  /etc/profile.d/gvfs-bash-completion.sh
   /usr/bin/cyggvfscommon-0.dll
+  /usr/bin/gvfs-cat.exe
+  /usr/bin/gvfs-copy.exe
+  /usr/bin/gvfs-info.exe
+  /usr/bin/gvfs-less
+  /usr/bin/gvfs-ls.exe
+  /usr/bin/gvfs-mkdir.exe
+  /usr/bin/gvfs-monitor-dir.exe
+  /usr/bin/gvfs-monitor-file.exe
+  /usr/bin/gvfs-mount.exe
+  /usr/bin/gvfs-move.exe
+  /usr/bin/gvfs-open.exe
+  /usr/bin/gvfs-rename.exe
+  /usr/bin/gvfs-rm.exe
+  /usr/bin/gvfs-save.exe
+  /usr/bin/gvfs-trash.exe
+  /usr/bin/gvfs-tree.exe
   /usr/include/gvfs-client/gvfs/gvfsurimapper.h
   /usr/include/gvfs-client/gvfs/gvfsuriutils.h
+  /usr/lib/gio/gvfsd-archive.exe
+  /usr/lib/gio/gvfsd-burn.exe
+  /usr/lib/gio/gvfsd-computer.exe
+  /usr/lib/gio/gvfsd-dav.exe
+  /usr/lib/gio/gvfsd-ftp.exe
+  /usr/lib/gio/gvfsd-http.exe
+  /usr/lib/gio/gvfsd-localtest.exe
+  /usr/lib/gio/gvfsd-network.exe
+  /usr/lib/gio/gvfsd-sftp.exe
+  /usr/lib/gio/gvfsd-trash.exe
+  /usr/lib/gio/gvfsd.exe
+  /usr/lib/gio/modules/cyggiogconf.dll
   /usr/lib/gio/modules/cyggvfsdbus.dll
+  /usr/lib/gio/modules/libgiogconf.la
   /usr/lib/gio/modules/libgvfsdbus.la
   /usr/lib/libgvfscommon.dll.a
   /usr/lib/libgvfscommon.la
-  /usr/sbin/gvfsd-ftp.exe
-  /usr/sbin/gvfsd-sftp.exe
-  /usr/sbin/gvfsd-trash.exe
-  /usr/sbin/gvfsd.exe
   /usr/share/dbus-1/services/gvfs-daemon.service
-  /usr/share/doc/Cygwin/gvfs-0.0.2.README
-  /usr/share/doc/gvfs-0.0.2/AUTHORS
-  /usr/share/doc/gvfs-0.0.2/COPYING
-  /usr/share/doc/gvfs-0.0.2/ChangeLog
-  /usr/share/doc/gvfs-0.0.2/NEWS
-  /usr/share/doc/gvfs-0.0.2/TODO
+  /usr/share/doc/gvfs-0.2.4/AUTHORS
+  /usr/share/doc/gvfs-0.2.4/COPYING
+  /usr/share/doc/gvfs-0.2.4/ChangeLog
+  /usr/share/doc/gvfs-0.2.4/INSTALL
+  /usr/share/doc/gvfs-0.2.4/MAINTAINERS
+  /usr/share/doc/gvfs-0.2.4/NEWS
+  /usr/share/doc/gvfs-0.2.4/README
+  /usr/share/doc/gvfs-0.2.4/TODO
+  /usr/share/gvfs/mounts/archive.mount
+  /usr/share/gvfs/mounts/burn.mount
+  /usr/share/gvfs/mounts/computer.mount
+  /usr/share/gvfs/mounts/dav.mount
+  /usr/share/gvfs/mounts/ftp.mount
+  /usr/share/gvfs/mounts/http.mount
+  /usr/share/gvfs/mounts/localtest.mount
+  /usr/share/gvfs/mounts/network.mount
+  /usr/share/gvfs/mounts/sftp.mount
+  /usr/share/gvfs/mounts/trash.mount
+  /usr/share/locale/ar/LC_MESSAGES/gvfs.mo
+  /usr/share/locale/be@latin/LC_MESSAGES/gvfs.mo
+  /usr/share/locale/bg/LC_MESSAGES/gvfs.mo
+  /usr/share/locale/bn_IN/LC_MESSAGES/gvfs.mo
+  /usr/share/locale/ca/LC_MESSAGES/gvfs.mo
+  /usr/share/locale/cs/LC_MESSAGES/gvfs.mo
+  /usr/share/locale/da/LC_MESSAGES/gvfs.mo
+  /usr/share/locale/de/LC_MESSAGES/gvfs.mo
+  /usr/share/locale/el/LC_MESSAGES/gvfs.mo
+  /usr/share/locale/en_GB/LC_MESSAGES/gvfs.mo
+  /usr/share/locale/es/LC_MESSAGES/gvfs.mo
+  /usr/share/locale/et/LC_MESSAGES/gvfs.mo
+  /usr/share/locale/eu/LC_MESSAGES/gvfs.mo
+  /usr/share/locale/fi/LC_MESSAGES/gvfs.mo
+  /usr/share/locale/fr/LC_MESSAGES/gvfs.mo
+  /usr/share/locale/gl/LC_MESSAGES/gvfs.mo
+  /usr/share/locale/he/LC_MESSAGES/gvfs.mo
+  /usr/share/locale/hi/LC_MESSAGES/gvfs.mo
+  /usr/share/locale/hu/LC_MESSAGES/gvfs.mo
+  /usr/share/locale/it/LC_MESSAGES/gvfs.mo
+  /usr/share/locale/ja/LC_MESSAGES/gvfs.mo
+  /usr/share/locale/ko/LC_MESSAGES/gvfs.mo
+  /usr/share/locale/ku/LC_MESSAGES/gvfs.mo
+  /usr/share/locale/lt/LC_MESSAGES/gvfs.mo
+  /usr/share/locale/mk/LC_MESSAGES/gvfs.mo
+  /usr/share/locale/ml/LC_MESSAGES/gvfs.mo
+  /usr/share/locale/mr/LC_MESSAGES/gvfs.mo
+  /usr/share/locale/nb/LC_MESSAGES/gvfs.mo
+  /usr/share/locale/nl/LC_MESSAGES/gvfs.mo
+  /usr/share/locale/nn/LC_MESSAGES/gvfs.mo
+  /usr/share/locale/pa/LC_MESSAGES/gvfs.mo
+  /usr/share/locale/pl/LC_MESSAGES/gvfs.mo
+  /usr/share/locale/pt/LC_MESSAGES/gvfs.mo
+  /usr/share/locale/pt_BR/LC_MESSAGES/gvfs.mo
+  /usr/share/locale/ru/LC_MESSAGES/gvfs.mo
+  /usr/share/locale/sk/LC_MESSAGES/gvfs.mo
+  /usr/share/locale/sl/LC_MESSAGES/gvfs.mo
+  /usr/share/locale/sv/LC_MESSAGES/gvfs.mo
+  /usr/share/locale/ta/LC_MESSAGES/gvfs.mo
+  /usr/share/locale/th/LC_MESSAGES/gvfs.mo
+  /usr/share/locale/tr/LC_MESSAGES/gvfs.mo
+  /usr/share/locale/uk/LC_MESSAGES/gvfs.mo
+  /usr/share/locale/vi/LC_MESSAGES/gvfs.mo
+  /usr/share/locale/zh_CN/LC_MESSAGES/gvfs.mo
+  /usr/share/locale/zh_HK/LC_MESSAGES/gvfs.mo
+  /usr/share/locale/zh_TW/LC_MESSAGES/gvfs.mo
 
 ------------------
 
 Port Notes:
 
------ version 0.0.2-1 -----
+----- version 0.2.4-1 -----
 Initial release for Cygwin.
 
 

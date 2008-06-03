@@ -1,4 +1,8 @@
 category: Gnome
-requires: cygwin gio glib2 libdbus1_3 libintl8
-sdesc: "Next-generation GNOME VFS"
-ldesc: "Next-generation GNOME VFS"
+requires: cygwin GConf2 glib2 gnome-keyring libarchive2 libdbus1_3 libintl8 libxml2
+sdesc: "GNOME next-gen virtual filesystem"
+ldesc: "gvfs is a userspace virtual filesystem designed to work with the 
+i/o abstractions of gio (a library availible in glib >= 2.15.1). It 
+installs several modules that are automatically used by applications 
+using the APIs of libgio. There is also fuse support that allows 
+applications not using gio to access the gvfs filesystems."
