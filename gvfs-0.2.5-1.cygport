@@ -1,0 +1,10 @@
+inherit gnome2
+
+CYGCONF_ARGS="
+	--libexecdir=/usr/lib/gio
+	--disable-avahi
+	--disable-fuse
+	--disable-hal
+	--disable-obexftp
+	--disable-samba
+"

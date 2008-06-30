@@ -7,28 +7,26 @@ using the APIs of libgio. There is also fuse support that allows
 applications not using gio to access the gvfs filesystems.
 
 Runtime requirements:
-  cygwin-1.5.25-11
+  cygwin-1.5.25-15
   GConf2-2.22.0-1
   glib2-2.16.3-1
   gnome-keyring-2.20.3-1
   libarchive2-2.4.17-1
-  libdbus1_3-1.0.2-1
+  libdbus1_3-1.2.1-1
   libintl8-0.15-1
   libxml2-2.6.32-1
 
 Build requirements:
 (besides corresponding -devel packages)
-  cygwin-1.5.24-2
   autoconf2.5-2.61-1
-  automake1.10-1.10-1
-  binutils-20060817-1
-  cygport-0.3.7-1
-  gawk-3.1.5-4
+  automake1.10-1.10.1-1
+  binutils-20080523-1
+  cygport-0.3.11-1
+  gawk-3.1.6-1
   gcc-core-3.4.4-3
-  gtk-doc-1.9-1
-  libtool1.5-1.5.23a-2
+  libtool-2.2.2-2
   make-3.81-1
-  pkg-config-0.21-1
+  pkg-config-0.23a-2
   sed-4.1.5-2
 
 Canonical website:
@@ -40,15 +38,15 @@ Canonical download:
 -------------------------------------------
 
 Build instructions:
-  unpack gvfs-0.2.4-X-src.tar.bz2
+  unpack gvfs-0.2.5-X-src.tar.bz2
     if you use setup to install this src package, it will be
 	 unpacked under /usr/src automatically
   cd /usr/src
-  cygport ./gvfs-0.2.4-X.cygport all
+  cygport ./gvfs-0.2.5-X.cygport all
 
 This will create:
-  /usr/src/gvfs-0.2.4-X-src.tar.bz2
-  /usr/src/gvfs-0.2.4-X.tar.bz2
+  /usr/src/gvfs-0.2.5-X-src.tar.bz2
+  /usr/src/gvfs-0.2.5-X.tar.bz2
 
 -------------------------------------------
 
@@ -92,14 +90,14 @@ Files included in the binary package:
   /usr/lib/libgvfscommon.dll.a
   /usr/lib/libgvfscommon.la
   /usr/share/dbus-1/services/gvfs-daemon.service
-  /usr/share/doc/gvfs-0.2.4/AUTHORS
-  /usr/share/doc/gvfs-0.2.4/COPYING
-  /usr/share/doc/gvfs-0.2.4/ChangeLog
-  /usr/share/doc/gvfs-0.2.4/INSTALL
-  /usr/share/doc/gvfs-0.2.4/MAINTAINERS
-  /usr/share/doc/gvfs-0.2.4/NEWS
-  /usr/share/doc/gvfs-0.2.4/README
-  /usr/share/doc/gvfs-0.2.4/TODO
+  /usr/share/doc/gvfs-0.2.5/AUTHORS
+  /usr/share/doc/gvfs-0.2.5/COPYING
+  /usr/share/doc/gvfs-0.2.5/ChangeLog
+  /usr/share/doc/gvfs-0.2.5/INSTALL
+  /usr/share/doc/gvfs-0.2.5/MAINTAINERS
+  /usr/share/doc/gvfs-0.2.5/NEWS
+  /usr/share/doc/gvfs-0.2.5/README
+  /usr/share/doc/gvfs-0.2.5/TODO
   /usr/share/gvfs/mounts/archive.mount
   /usr/share/gvfs/mounts/burn.mount
   /usr/share/gvfs/mounts/computer.mount
@@ -160,6 +158,9 @@ Files included in the binary package:
 ------------------
 
 Port Notes:
+
+----- version 0.2.5-1 -----
+Version bump.
 
 ----- version 0.2.4-1 -----
 Initial release for Cygwin.
