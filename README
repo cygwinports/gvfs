@@ -8,23 +8,24 @@ applications not using gio to access the gvfs filesystems.
 
 Runtime requirements:
   cygwin-1.5.25-15
-  GConf2-2.22.0-1
-  glib2-2.16.3-1
-  gnome-keyring-2.20.3-1
-  libarchive2-2.4.17-1
-  libdbus1_3-1.2.1-1
-  libintl8-0.15-1
-  libxml2-2.6.32-1
+  libarchive2-2.5.5-1
+  libdbus1_3-1.2.4-1
+  libgconf2_4-2.24.0-1
+  libglib2.0_0-2.18.3-1
+  libgnome-keyring0-2.24.1-1
+  libintl8-0.17-2
+  libsoup2.4_1-2.24.2.1-1
+  libxml2-2.7.2-2
 
 Build requirements:
 (besides corresponding -devel packages)
-  autoconf2.5-2.61-1
-  automake1.10-1.10.1-1
-  binutils-20080523-1
-  cygport-0.3.11-1
+  autoconf2.5-2.63-1
+  automake1.10-1.10.1-2
+  binutils-20080624-2
+  cygport-0.4.3-1
   gawk-3.1.6-1
   gcc-core-3.4.4-3
-  libtool-2.2.2-2
+  libtool-2.2.6a-1
   make-3.81-1
   pkg-config-0.23a-2
   sed-4.1.5-2
@@ -38,15 +39,15 @@ Canonical download:
 -------------------------------------------
 
 Build instructions:
-  unpack gvfs-0.2.5-X-src.tar.bz2
+  unpack gvfs-1.0.3-X-src.tar.bz2
     if you use setup to install this src package, it will be
 	 unpacked under /usr/src automatically
   cd /usr/src
-  cygport ./gvfs-0.2.5-X.cygport all
+  cygport ./gvfs-1.0.3-X.cygport all
 
 This will create:
-  /usr/src/gvfs-0.2.5-X-src.tar.bz2
-  /usr/src/gvfs-0.2.5-X.tar.bz2
+  /usr/src/gvfs-1.0.3-X-src.tar.bz2
+  /usr/src/gvfs-1.0.3-X.tar.bz2
 
 -------------------------------------------
 
@@ -72,32 +73,34 @@ Files included in the binary package:
   /usr/bin/gvfs-tree.exe
   /usr/include/gvfs-client/gvfs/gvfsurimapper.h
   /usr/include/gvfs-client/gvfs/gvfsuriutils.h
-  /usr/lib/gio/gvfsd-archive.exe
-  /usr/lib/gio/gvfsd-burn.exe
-  /usr/lib/gio/gvfsd-computer.exe
-  /usr/lib/gio/gvfsd-dav.exe
-  /usr/lib/gio/gvfsd-ftp.exe
-  /usr/lib/gio/gvfsd-http.exe
-  /usr/lib/gio/gvfsd-localtest.exe
-  /usr/lib/gio/gvfsd-network.exe
-  /usr/lib/gio/gvfsd-sftp.exe
-  /usr/lib/gio/gvfsd-trash.exe
-  /usr/lib/gio/gvfsd.exe
   /usr/lib/gio/modules/cyggiogconf.dll
+  /usr/lib/gio/modules/cyggioremote-volume-monitor.dll
   /usr/lib/gio/modules/cyggvfsdbus.dll
   /usr/lib/gio/modules/libgiogconf.la
+  /usr/lib/gio/modules/libgioremote-volume-monitor.la
   /usr/lib/gio/modules/libgvfsdbus.la
+  /usr/lib/gvfs/gvfsd-archive.exe
+  /usr/lib/gvfs/gvfsd-burn.exe
+  /usr/lib/gvfs/gvfsd-computer.exe
+  /usr/lib/gvfs/gvfsd-dav.exe
+  /usr/lib/gvfs/gvfsd-ftp.exe
+  /usr/lib/gvfs/gvfsd-http.exe
+  /usr/lib/gvfs/gvfsd-localtest.exe
+  /usr/lib/gvfs/gvfsd-network.exe
+  /usr/lib/gvfs/gvfsd-sftp.exe
+  /usr/lib/gvfs/gvfsd-trash.exe
+  /usr/lib/gvfs/gvfsd.exe
   /usr/lib/libgvfscommon.dll.a
   /usr/lib/libgvfscommon.la
   /usr/share/dbus-1/services/gvfs-daemon.service
-  /usr/share/doc/gvfs-0.2.5/AUTHORS
-  /usr/share/doc/gvfs-0.2.5/COPYING
-  /usr/share/doc/gvfs-0.2.5/ChangeLog
-  /usr/share/doc/gvfs-0.2.5/INSTALL
-  /usr/share/doc/gvfs-0.2.5/MAINTAINERS
-  /usr/share/doc/gvfs-0.2.5/NEWS
-  /usr/share/doc/gvfs-0.2.5/README
-  /usr/share/doc/gvfs-0.2.5/TODO
+  /usr/share/doc/gvfs-1.0.3/AUTHORS
+  /usr/share/doc/gvfs-1.0.3/COPYING
+  /usr/share/doc/gvfs-1.0.3/ChangeLog
+  /usr/share/doc/gvfs-1.0.3/INSTALL
+  /usr/share/doc/gvfs-1.0.3/MAINTAINERS
+  /usr/share/doc/gvfs-1.0.3/NEWS
+  /usr/share/doc/gvfs-1.0.3/README
+  /usr/share/doc/gvfs-1.0.3/TODO
   /usr/share/gvfs/mounts/archive.mount
   /usr/share/gvfs/mounts/burn.mount
   /usr/share/gvfs/mounts/computer.mount
@@ -108,6 +111,7 @@ Files included in the binary package:
   /usr/share/gvfs/mounts/network.mount
   /usr/share/gvfs/mounts/sftp.mount
   /usr/share/gvfs/mounts/trash.mount
+  /usr/share/gvfs/remote-volume-monitors/.keep-gvfs
   /usr/share/locale/ar/LC_MESSAGES/gvfs.mo
   /usr/share/locale/be@latin/LC_MESSAGES/gvfs.mo
   /usr/share/locale/bg/LC_MESSAGES/gvfs.mo
@@ -123,12 +127,15 @@ Files included in the binary package:
   /usr/share/locale/eu/LC_MESSAGES/gvfs.mo
   /usr/share/locale/fi/LC_MESSAGES/gvfs.mo
   /usr/share/locale/fr/LC_MESSAGES/gvfs.mo
+  /usr/share/locale/ga/LC_MESSAGES/gvfs.mo
   /usr/share/locale/gl/LC_MESSAGES/gvfs.mo
+  /usr/share/locale/gu/LC_MESSAGES/gvfs.mo
   /usr/share/locale/he/LC_MESSAGES/gvfs.mo
   /usr/share/locale/hi/LC_MESSAGES/gvfs.mo
   /usr/share/locale/hu/LC_MESSAGES/gvfs.mo
   /usr/share/locale/it/LC_MESSAGES/gvfs.mo
   /usr/share/locale/ja/LC_MESSAGES/gvfs.mo
+  /usr/share/locale/kn/LC_MESSAGES/gvfs.mo
   /usr/share/locale/ko/LC_MESSAGES/gvfs.mo
   /usr/share/locale/ku/LC_MESSAGES/gvfs.mo
   /usr/share/locale/lt/LC_MESSAGES/gvfs.mo
@@ -145,8 +152,12 @@ Files included in the binary package:
   /usr/share/locale/ru/LC_MESSAGES/gvfs.mo
   /usr/share/locale/sk/LC_MESSAGES/gvfs.mo
   /usr/share/locale/sl/LC_MESSAGES/gvfs.mo
+  /usr/share/locale/sq/LC_MESSAGES/gvfs.mo
+  /usr/share/locale/sr/LC_MESSAGES/gvfs.mo
+  /usr/share/locale/sr@latin/LC_MESSAGES/gvfs.mo
   /usr/share/locale/sv/LC_MESSAGES/gvfs.mo
   /usr/share/locale/ta/LC_MESSAGES/gvfs.mo
+  /usr/share/locale/te/LC_MESSAGES/gvfs.mo
   /usr/share/locale/th/LC_MESSAGES/gvfs.mo
   /usr/share/locale/tr/LC_MESSAGES/gvfs.mo
   /usr/share/locale/uk/LC_MESSAGES/gvfs.mo
@@ -158,6 +169,9 @@ Files included in the binary package:
 ------------------
 
 Port Notes:
+
+----- version 1.0.3-1 -----
+Version bump for GNOME 2.24.
 
 ----- version 0.2.5-1 -----
 Version bump.

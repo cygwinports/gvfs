@@ -1,0 +1,17 @@
+inherit gnome2
+
+PATCH_URI="
+	1.0.3-no-undefined.patch
+	1.0.3-sys_time_h.patch
+"
+
+CYGCONF_ARGS="
+	--libexecdir=/usr/lib/gvfs
+	--disable-avahi
+	--disable-fuse
+	--disable-hal
+	--disable-obexftp
+	--disable-samba
+"
+
+KEEPDIRS="/usr/share/gvfs/remote-volume-monitors"
