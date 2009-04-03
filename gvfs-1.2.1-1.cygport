@@ -1,14 +1,12 @@
 inherit gnome2
 
-PATCH_URI="
-	1.0.3-no-undefined.patch
-	1.0.3-sys_time_h.patch
-"
+PATCH_URI="1.2.1-as-needed.patch"
 
 CYGCONF_ARGS="
 	--libexecdir=/usr/lib/gvfs
 	--disable-avahi
 	--disable-fuse
+	--disable-gphoto2
 	--disable-hal
 	--disable-obexftp
 	--disable-samba
