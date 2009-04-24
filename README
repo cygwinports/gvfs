@@ -7,12 +7,12 @@ using the APIs of libgio. There is also fuse support that allows
 applications not using gio to access the gvfs filesystems.
 
 Runtime requirements:
-  cygwin-1.7.0-44
+  cygwin-1.7.0-45
   libarchive2-2.7.0pre-10
   libdbus1_3-1.2.12-10
   libgcc1-4.3.2-2
   libgconf2_4-2.26.0-1
-  libglib2.0_0-2.20.0-1
+  libglib2.0_0-2.20.1-1
   libgnome-keyring0-2.26.0-1
   libintl8-0.17-10
   libsoup2.4_1-2.26.0-1
@@ -41,15 +41,15 @@ Canonical download:
 -------------------------------------------
 
 Build instructions:
-  unpack gvfs-1.2.1-X-src.tar.bz2
+  unpack gvfs-1.2.2-X-src.tar.bz2
     if you use setup to install this src package, it will be
 	 unpacked under /usr/src automatically
   cd /usr/src
-  cygport ./gvfs-1.2.1-X.cygport all
+  cygport ./gvfs-1.2.2-X.cygport all
 
 This will create:
-  /usr/src/gvfs-1.2.1-X-src.tar.bz2
-  /usr/src/gvfs-1.2.1-X.tar.bz2
+  /usr/src/gvfs-1.2.2-X-src.tar.bz2
+  /usr/src/gvfs-1.2.2-X.tar.bz2
 
 -------------------------------------------
 
@@ -174,6 +174,9 @@ Files included in the binary package:
 ------------------
 
 Port Notes:
+
+----- version 1.2.2-1 -----
+Version bump.
 
 ----- version 1.2.1-1 -----
 Initial release of GNOME 2.26 for Cygwin 1.7.
