@@ -4,10 +4,12 @@ CYGCONF_ARGS="
 	--libexecdir=/usr/lib/gvfs
 	--disable-avahi
 	--disable-fuse
+	--disable-gdu
 	--disable-gphoto2
 	--disable-hal
 	--disable-obexftp
 	--disable-samba
+	--disable-udev
 "
 
 KEEPDIRS="/usr/share/gvfs/remote-volume-monitors"
