@@ -7,17 +7,16 @@ using the APIs of libgio. There is also fuse support that allows
 applications not using gio to access the gvfs filesystems.
 
 Runtime requirements:
-  cygwin-1.7.5-1
+  cygwin-1.7.7-1
   libarchive2-2.8.3-1
   libdbus1_3-1.2.24-1
   libexpat1-2.0.1-1
-  libgcc1-4.3.4-3
   libgconf2_4-2.28.1-1
   libglib2.0_0-2.24.1-1
   libgnome-keyring0-2.30.1-1
   libintl8-0.17-11
-  libsoup-gnome2.4_1-2.30.1-1
-  libsoup2.4_1-2.30.1-1
+  libsoup-gnome2.4_1-2.30.2-1
+  libsoup2.4_1-2.30.2-1
   libxml2-2.7.7-1
 
 Build requirements:
@@ -25,9 +24,9 @@ Build requirements:
   autoconf2.5-2.65-1
   automake1.11-1.11.1-1
   binutils-2.20.51-2
-  cygport-0.9.84-1
+  cygport-0.10.0-1
   gawk-3.1.7-1
-  gcc4-core-4.3.4-3
+  gcc4-core-4.5.0-1
   gnome-common-2.28.0-2
   libtool-2.2.7a-15
   make-3.81-2
@@ -42,19 +41,22 @@ Canonical download:
 -------------------------------------------
 
 Build instructions:
-  unpack gvfs-1.6.1-X-src.tar.bz2
+  unpack gvfs-1.6.3-X-src.tar.bz2
     if you use setup to install this src package, it will be
 	 unpacked under /usr/src automatically
   cd /usr/src
-  cygport ./gvfs-1.6.1-X.cygport all
+  cygport ./gvfs-1.6.3-X.cygport all
 
 This will create:
-  /usr/src/gvfs-1.6.1-X-src.tar.bz2
-  /usr/src/gvfs-1.6.1-X.tar.bz2
+  /usr/src/gvfs-1.6.3-X-src.tar.bz2
+  /usr/src/gvfs-1.6.3-X.tar.bz2
 
 -------------------------------------------
 
 Port Notes:
+
+----- version 1.6.3-1 -----
+Version bump.
 
 ----- version 1.6.1-1 -----
 Version bump for GNOME 2.30.
