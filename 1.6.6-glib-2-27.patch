@@ -1,0 +1,10 @@
+--- origsrc/gvfs-1.6.6/gconf/Makefile.am	2010-11-12 10:17:05.000000000 -0600
++++ src/gvfs-1.6.6/gconf/Makefile.am	2010-12-16 00:35:45.332432400 -0600
+@@ -19,7 +19,6 @@ libgiogconf_la_CFLAGS =		\
+ 	$(GCONF_CFLAGS)                         \
+ 	-DGIO_MODULE_DIR=\"$(GIO_MODULE_DIR)\"	\
+ 	-DGVFS_LOCALEDIR=\""$(localedir)"\"	\
+-	-DG_DISABLE_DEPRECATED			\
+ 	$(NULL)
+ 
+ libgiogconf_la_LDFLAGS = 	\
