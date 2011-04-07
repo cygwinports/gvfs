@@ -1,7 +1,5 @@
 inherit gnome2
 
-PATCH_URI="1.6.6-glib-2-27.patch"
-
 CYGCONF_ARGS="
 	--libexecdir=/usr/lib/gvfs
 	--disable-avahi
