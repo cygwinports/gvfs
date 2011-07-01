@@ -1,0 +1,11 @@
+--- origsrc/gvfs-1.8.2/common/Makefile.am	2011-05-23 09:38:56.000000000 -0500
++++ src/gvfs-1.8.2/common/Makefile.am	2011-07-01 06:23:07.986538100 -0500
+@@ -40,6 +40,8 @@ libgvfscommon_dnssd_la_SOURCES = 	\
+ libgvfscommon_dnssd_la_CFLAGS =	\
+ 	$(AVAHI_CFLAGS)
+ 
++libgvfscommon_dnssd_la_LDFLAGS = -no-undefined
++
+ libgvfscommon_dnssd_la_LIBADD =	\
+ 	libgvfscommon.la \
+ 	$(AVAHI_LIBS) \

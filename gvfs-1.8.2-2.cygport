@@ -1,8 +1,10 @@
 inherit gnome2
 
+
+PATCH_URI="1.8.2-no-undefined.patch"
+
 CYGCONF_ARGS="
 	--libexecdir=/usr/lib/gvfs
-	--disable-avahi
 	--disable-fuse
 	--disable-gdu
 	--disable-gphoto2
