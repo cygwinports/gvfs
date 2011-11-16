@@ -3,6 +3,16 @@ inherit gnome2
 
 PATCH_URI="1.8.2-no-undefined.patch"
 
+DEPEND="gnome-common
+	libexpat1-devel
+	pkgconfig(avahi-client)
+	pkgconfig(avahi-glib)
+	pkgconfig(dbus-1)
+	pkgconfig(gnome-keyring-1)
+	pkgconfig(libarchive)
+	pkgconfig(libsoup-gnome-2.4)
+	pkgconfig(libxml-2.0)"
+
 CYGCONF_ARGS="
 	--libexecdir=/usr/lib/gvfs
 	--disable-fuse
