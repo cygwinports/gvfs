@@ -4,6 +4,7 @@ inherit gnome2
 PATCH_URI="1.8.2-no-undefined.patch"
 
 DEPEND="gnome-common
+	libattr-devel
 	libexpat1-devel
 	pkgconfig(avahi-client)
 	pkgconfig(avahi-glib)
@@ -15,6 +16,7 @@ DEPEND="gnome-common
 
 CYGCONF_ARGS="
 	--libexecdir=/usr/lib/gvfs
+	--disable-afp
 	--disable-fuse
 	--disable-gdu
 	--disable-gphoto2

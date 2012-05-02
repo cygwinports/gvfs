@@ -1,5 +1,5 @@
 category: Gnome
-requires: libarchive2 libavahi-client3 libavahi-common3 libavahi-glib1 libdbus1_3 libexpat1 libglib2.0_0 libgnome-keyring0 libintl8 libsoup2.4_1 libsoup-gnome2.4_1 libxml2
+requires: libarchive2 libavahi-client3 libavahi-common3 libavahi-glib1 libdbus1_3 libglib2.0_0 libgnome-keyring0 libintl8 libsoup2.4_1 libsoup-gnome2.4_1 libxml2
 sdesc: "GNOME virtual filesystem"
 ldesc: "gvfs is a userspace virtual filesystem designed to work with the 
 i/o abstractions of gio (a library availible in glib >= 2.15.1). It 
