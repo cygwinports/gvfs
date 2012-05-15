@@ -27,3 +27,5 @@ CYGCONF_ARGS="
 "
 
 KEEPDIRS="/usr/share/gvfs/remote-volume-monitors"
+
+KEEP_LA_FILES="none"
