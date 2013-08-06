@@ -1,7 +1,7 @@
 inherit gnome2
 
 NAME="gvfs"
-VERSION=1.14.2
+VERSION=1.16.3
 RELEASE=1
 CATEGORY="GNOME"
 SUMMARY="GNOME virtual filesystem"
@@ -25,7 +25,6 @@ DEPEND="gnome-common
 	pkgconfig(libxml-2.0)"
 
 CYGCONF_ARGS="
-	--libexecdir=/usr/lib/gvfs
 	--disable-afp
 	--disable-fuse
 	--disable-gdu
