@@ -1,7 +1,7 @@
 inherit gnome2
 
 NAME="gvfs"
-VERSION=1.16.3
+VERSION=1.16.4
 RELEASE=1
 CATEGORY="GNOME"
 SUMMARY="GNOME virtual filesystem"
@@ -11,8 +11,12 @@ several modules that are automatically used by applications using the APIs of
 libgio. There is also fuse support that allows applications not using gio to
 access the gvfs filesystems."
 
-PATCH_URI="1.8.2-no-undefined.patch
-           1.14.2-nl_langinfo.patch"
+PATCH_URI="
+	http://pkgs.fedoraproject.org/cgit/gvfs.git/plain/gvfs-archive-integration.patch
+	http://pkgs.fedoraproject.org/cgit/gvfs.git/plain/0001-MTP-Fail-fast-if-in-the-middle-of-an-unmount.patch?h=f19
+	1.8.2-no-undefined.patch
+	1.14.2-nl_langinfo.patch
+"
 
 DEPEND="gnome-common
 	pkgconfig(avahi-client)
@@ -24,10 +28,12 @@ DEPEND="gnome-common
 	pkgconfig(libsoup-gnome-2.4)
 	pkgconfig(libxml-2.0)"
 
+# goa: pulls in json-glib, librest, webkitgtk
 CYGCONF_ARGS="
 	--disable-afp
 	--disable-fuse
 	--disable-gdu
+	--disable-goa
 	--disable-gphoto2
 	--disable-hal
 	--disable-obexftp
