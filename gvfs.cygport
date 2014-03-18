@@ -1,7 +1,7 @@
 inherit gnome2
 
 NAME="gvfs"
-VERSION=1.16.4
+VERSION=1.18.3
 RELEASE=1
 CATEGORY="GNOME"
 SUMMARY="GNOME virtual filesystem"
@@ -13,7 +13,7 @@ access the gvfs filesystems."
 
 PATCH_URI="
 	http://pkgs.fedoraproject.org/cgit/gvfs.git/plain/gvfs-archive-integration.patch
-	http://pkgs.fedoraproject.org/cgit/gvfs.git/plain/0001-MTP-Fail-fast-if-in-the-middle-of-an-unmount.patch?h=f19
+	http://pkgs.fedoraproject.org/cgit/gvfs.git/plain/0001-MTP-Fail-fast-if-in-the-middle-of-an-unmount.patch?h=f20
 	1.8.2-no-undefined.patch
 	1.14.2-nl_langinfo.patch
 "
