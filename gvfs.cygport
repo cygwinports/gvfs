@@ -22,7 +22,6 @@ DEPEND="gnome-common
 	pkgconfig(avahi-client)
 	pkgconfig(avahi-glib)
 	pkgconfig(dbus-1)
-	pkgconfig(goa-1.0)
 	pkgconfig(gnome-keyring-1)
 	pkgconfig(libarchive)
 	pkgconfig(libbluray)
@@ -30,31 +29,18 @@ DEPEND="gnome-common
 	pkgconfig(libxml-2.0)"
 
 # afc: libimobiledevice still untested
+# goa: pulls in json-glib, librest, webkitgtk; only ownCloud is supported, but
+#      dav mounts seem not to work 100%
 CYGCONF_ARGS="
 	--disable-afc
 	--disable-fuse
 	--disable-gdu
+	--disable-goa
 	--disable-gphoto2
 	--disable-hal
 	--disable-obexftp
 	--disable-samba
 	--disable-udev
 "
-
-PKG_NAMES="${NAME} ${NAME}-afp ${NAME}-archive ${NAME}-goa"
-gvfs_CONTENTS="--exclude=*afp* --exclude=*archive* --exclude=*goa*
-	etc/postinstall/ usr/bin/ usr/include/gvfs-client/ usr/lib/gio/
-	usr/libexec/gvfsd* usr/share/GConf/ usr/share/bash-completion/
-	usr/share/dbus-1/services/gvfs-* usr/share/doc/ usr/share/glib-2.0/
-	usr/share/gvfs/ usr/share/locale/ usr/share/man/"
-gvfs_afp_CONTENTS="usr/libexec/gvfsd-afp* usr/share/gvfs/mounts/afp*.mount"
-gvfs_archive_CONTENTS="etc/postinstall/ usr/libexec/gvfsd-archive.exe
-	usr/share/applications/mount-archive.desktop
-	usr/share/gvfs/mounts/archive.mount"
-gvfs_goa_CONTENTS="usr/libexec/gvfs-goa-volume-monitor.exe
-	usr/share/dbus-1/services/org.gtk.Private.GoaVolumeMonitor.service
-	usr/share/gvfs/remote-volume-monitors/goa.monitor"
-# internal library
-PKG_IGNORE="usr/lib/libgvfscommon.dll.a"
 
 KEEPDIRS="/usr/share/gvfs/remote-volume-monitors"
