@@ -1,0 +1,20 @@
+--- origsrc/gvfs-1.18.3/daemon/gvfsbackendarchive.c	2013-11-08 07:23:39.000000000 -0600
++++ src/gvfs-1.18.3/daemon/gvfsbackendarchive.c	2014-03-26 13:02:00.731474700 -0500
+@@ -208,7 +208,7 @@ gvfs_archive_finish (GVfsArchive *archiv
+   gvfs_archive_pop_job (archive);
+ 
+   g_object_unref (archive->backend);
+-  archive_read_free (archive->archive);
++  archive_read_finish (archive->archive);
+   g_slice_free (GVfsArchive, archive);
+ }
+ 
+@@ -225,7 +225,7 @@ gvfs_archive_new (GVfsBackendArchive *ba
+   gvfs_archive_push_job (d, job);
+ 
+   d->archive = archive_read_new ();
+-  archive_read_support_filter_all (d->archive);
++  archive_read_support_compression_all (d->archive);
+   archive_read_support_format_all (d->archive);
+   archive_read_open2 (d->archive,
+ 		      d,

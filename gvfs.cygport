@@ -17,6 +17,9 @@ PATCH_URI="
 	1.8.2-no-undefined.patch
 	1.14.2-nl_langinfo.patch
 "
+if defined ARCH_i686; then
+PATCH_URI+=" 1.18.3-libarchive-compat.patch"
+fi
 
 DEPEND="gnome-common
 	pkgconfig(avahi-client)
