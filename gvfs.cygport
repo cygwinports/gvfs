@@ -2,7 +2,7 @@ inherit gnome2
 
 NAME="gvfs"
 VERSION=1.26.3
-RELEASE=1
+RELEASE=2
 CATEGORY="GNOME"
 SUMMARY="GNOME virtual filesystem"
 DESCRIPTION="gvfs is a userspace virtual filesystem designed to work with the
@@ -17,28 +17,61 @@ PATCH_URI="
 "
 
 DEPEND="gnome-common
+	libgcrypt-devel
 	pkgconfig(avahi-client)
 	pkgconfig(avahi-glib)
 	pkgconfig(dbus-1)
+	pkgconfig(gcr-base-3)
+	pkgconfig(goa-1.0)
 	pkgconfig(libarchive)
 	pkgconfig(libbluray)
+	pkgconfig(libgdata)
+	pkgconfig(libnfs)
 	pkgconfig(libsecret-1)
 	pkgconfig(libsoup-gnome-2.4)
 	pkgconfig(libxml-2.0)"
 
 # afc: libimobiledevice still untested
-# goa: pulls in json-glib, librest, webkitgtk; only ownCloud is supported, but
-#      dav mounts seem not to work 100%
 CYGCONF_ARGS="
 	--disable-afc
 	--disable-fuse
 	--disable-gdu
-	--disable-goa
 	--disable-gphoto2
 	--disable-hal
-	--disable-obexftp
 	--disable-samba
 	--disable-udev
 "
+
+PKG_NAMES="gvfs gvfs-devel gvfs-goa"
+gvfs_CONTENTS="
+	--exclude=*GoaVolumeMonitor.service
+	--exclude=goa.monitor
+	--exclude=*google*
+	usr/bin/cyggvfs*
+	usr/bin/gvfs-*
+	usr/libexec/gvfsd*
+	usr/lib/gio/modules/cyggioremote-volume-monitor.dll
+	usr/lib/gio/modules/cyggvfsdbus.dll
+	usr/share/GConf/gsettings/gvfs-dns-sd.convert
+	usr/share/applications/mount-archive.desktop
+	usr/share/bash-completion/completions/gvfs-*
+	usr/share/dbus-1/services/org.gtk.vfs.*
+	usr/share/doc/gvfs/
+	usr/share/glib-2.0/schemas/org.gnome.system.*
+	usr/share/gvfs/
+	usr/share/locale/*/LC_MESSAGES/gvfs.mo
+	usr/share/man/man1/gvfs*
+	usr/share/man/man7/gvfs.7*
+"
+gvfs_devel_REQUIRES="gvfs libglib2.0-devel"
+gvfs_devel_CONTENTS="usr/include/gvfs-client/"
+gvfs_goa_CONTENTS="
+	usr/libexec/gvfs-goa-volume-monitor.exe
+	usr/libexec/gvfsd-google.exe
+	usr/share/dbus-1/services/org.gtk.vfs.GoaVolumeMonitor.service
+	usr/share/gvfs/mounts/google.mount
+	usr/share/gvfs/remote-volume-monitors/goa.monitor
+"
+PKG_IGNORE="usr/lib/systemd/ usr/lib/gvfs/libgvfs*.dll.a"
 
 KEEPDIRS="/usr/share/gvfs/remote-volume-monitors"
