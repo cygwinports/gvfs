@@ -1,8 +1,8 @@
 inherit gnome2
 
 NAME="gvfs"
-VERSION=1.26.3
-RELEASE=2
+VERSION=1.30.3
+RELEASE=1
 CATEGORY="GNOME"
 SUMMARY="GNOME virtual filesystem"
 DESCRIPTION="gvfs is a userspace virtual filesystem designed to work with the
@@ -33,6 +33,7 @@ DEPEND="gnome-common
 
 # afc: libimobiledevice still untested
 CYGCONF_ARGS="
+	--disable-admin
 	--disable-afc
 	--disable-fuse
 	--disable-gdu
