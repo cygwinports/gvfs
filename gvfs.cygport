@@ -1,7 +1,7 @@
 inherit gnome2
 
 NAME="gvfs"
-VERSION=1.30.3
+VERSION=1.30.4
 RELEASE=1
 CATEGORY="GNOME"
 SUMMARY="GNOME virtual filesystem"
