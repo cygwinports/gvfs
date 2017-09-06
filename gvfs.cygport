@@ -1,7 +1,7 @@
 inherit gnome2
 
 NAME="gvfs"
-VERSION=1.30.4
+VERSION=1.32.1
 RELEASE=1
 CATEGORY="GNOME"
 SUMMARY="GNOME virtual filesystem"
@@ -55,7 +55,6 @@ gvfs_CONTENTS="
 	usr/lib/gio/modules/cyggvfsdbus.dll
 	usr/share/GConf/gsettings/gvfs-dns-sd.convert
 	usr/share/applications/mount-archive.desktop
-	usr/share/bash-completion/completions/gvfs-*
 	usr/share/dbus-1/services/org.gtk.vfs.*
 	usr/share/doc/gvfs/
 	usr/share/glib-2.0/schemas/org.gnome.system.*
@@ -73,6 +72,6 @@ gvfs_goa_CONTENTS="
 	usr/share/gvfs/mounts/google.mount
 	usr/share/gvfs/remote-volume-monitors/goa.monitor
 "
-PKG_IGNORE="usr/lib/systemd/ usr/lib/gvfs/libgvfs*.dll.a"
+PKG_IGNORE="usr/lib/gvfs/libgvfs*.dll.a usr/share/polkit-1/"
 
 KEEPDIRS="/usr/share/gvfs/remote-volume-monitors"
